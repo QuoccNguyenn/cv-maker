@@ -6,7 +6,7 @@ export const FixedGlobalStyle = createGlobalStyle`
     }
     body{
         background-color: #fffa60;
-    overflow-x: hidden;
+        overflow-x: hidden;
     }
     .container{
         width: 100%;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const TemplateOne = ({ info, education }) => {
+const TemplateTwo = () => {
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
@@ -11,8 +11,10 @@ const TemplateOne = ({ info, education }) => {
                             <img src='../images/avatar/Untitled-2.png' alt='' />
                         </Image>
                         <Name>
-                            {info.name}{" "}
-                            <span className='job'>{info.position}</span>
+                            Andrew Johnson{" "}
+                            <span className='job'>
+                                Web Developer Internship
+                            </span>
                         </Name>
                     </WrapperAvatar>
                     <Description>
@@ -23,19 +25,29 @@ const TemplateOne = ({ info, education }) => {
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        {education.time}
+                                        2018-2022
                                     </span>
                                     <span className='place'>
-                                        {education.school}
+                                        Ton Duc Thang University
                                     </span>
                                 </div>
                                 <div className='description'>
-                                    {/* <span className='position'>
-                                        Computer Science
-                                    </span> */}
-                                    <span className='detail'>
-                                        {education.description}
+                                    <span className='position'>
+                                        <textarea
+                                            name=''
+                                            id=''
+                                            cols='30'
+                                            rows='1'
+                                            className='input'
+                                        ></textarea>
                                     </span>
+                                    <textarea
+                                        name=''
+                                        id=''
+                                        cols='30'
+                                        rows='6'
+                                        className='input'
+                                    ></textarea>
                                 </div>
                             </div>
                             <div className='wrap-content'>
@@ -171,7 +183,9 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>ADDRESS</span>
-                                <span>{info.address}</span>
+                                <span>
+                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
+                                </span>
                             </div>
                         </div>
                         <div className='wrap-inform'>
@@ -180,7 +194,9 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>WEB</span>
-                                <span>{info.mail}</span>
+                                <span>
+                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
+                                </span>
                             </div>
                         </div>
                         <div className='wrap-inform'>
@@ -189,7 +205,7 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>PHONE</span>
-                                <span>{info.phone}</span>
+                                <span>0000000000</span>
                             </div>
                         </div>
                         <div className='box-highlight'>Skill</div>
@@ -344,7 +360,6 @@ const Content = styled.div`
         }
     }
     .detail {
-        max-width: 100%;
         font-size: 13px;
     }
 `;
@@ -417,4 +432,4 @@ const SocialIcons = styled.div`
         width: 22px;
     }
 `;
-export default TemplateOne;
+export default TemplateTwo;

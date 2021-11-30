@@ -1,30 +1,20 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export const FixedGlobalStyle = createGlobalStyle`
     *{
         font-family: sans-serif;
+        box-sizing: border-box;
     }
     body{
-        background-color: #fffa60;
-    overflow-x: hidden;
+        background-color: #303D46;
+        overflow-x: hidden;
     }
     .container{
-        width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        width: 862px;
+        height: 1218px;
+        background-color: #fff;
         margin-right: auto;
         margin-left: auto;
-        @media (min-width: 576px) {
-            max-width: 540px;
-        }
-        @media (min-width: 768px) {
-            max-width: 720px;
-        }
-        @media (min-width: 992px) {
-            max-width: 960px;
-        }
-        @media (min-width: 1200px) {
-            max-width: 1140px;
-        }
+        margin-bottom: 200px;
     }
-`;
+`

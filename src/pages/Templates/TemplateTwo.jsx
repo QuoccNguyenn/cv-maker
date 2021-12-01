@@ -1,141 +1,3 @@
-<<<<<<< HEAD
-import React from 'react'
-import styled from 'styled-components'
-
-import InputAvatar from '../../components/InputAvatar'
-import FieldInfo from '../../components/FieldInfo'
-
-const TemplateTwo = () => {
-    return (
-        <WrapperTemplate className="container">
-            <WrapperContent>
-                <Header>
-                    <HeaderInfo>
-                        <InputName type="text" placeholder="Fullname" />
-                        <InputPosition type="text" placeholder="Position" />
-                    </HeaderInfo>
-
-                    <HeaderAvatar>
-                        <InputAvatar />
-                    </HeaderAvatar>
-                </Header>
-
-                <Content>
-                    <LeftContent>
-                        <FieldInfo
-                            title="Contact Information"
-                            fields={['Phone', 'Linkedin', 'Email', 'Twitter']}
-                            types={['text', 'text', 'text', 'text']}
-                        />
-                        <FieldInfo
-                            title="Education"
-                            fields={['2018-2022']}
-                            types={['textarea']}
-                        />
-                        <FieldInfo
-                            title="Skills"
-                            fields={[
-                                'Business Process Improvement',
-                                'Vendor Management',
-                                'Project Scheduling',
-                                'Sales Analysis',
-                            ]}
-                            types={[
-                                'textarea',
-                                'textarea',
-                                'textarea',
-                                'textarea',
-                            ]}
-                        />
-                        <FieldInfo
-                            title="Summary"
-                            fields={['Conclusion']}
-                            types={['textarea']}
-                        />
-                    </LeftContent>
-
-                    <RightContent>
-                        <FieldInfo
-                            title="Experience"
-                            fields={[
-                                '2018-2022 - present',
-                                '2004-09 - 2006-12',
-                            ]}
-                            types={['textarea', 'textarea']}
-                        />
-                        <FieldInfo
-                            title="Certifications"
-                            fields={['2015-05', '2014-04']}
-                            types={['text', 'text']}
-                        />
-                    </RightContent>
-                </Content>
-            </WrapperContent>
-        </WrapperTemplate>
-    )
-}
-
-const WrapperTemplate = styled.div``
-const WrapperContent = styled.div`
-    width: 100%;
-`
-const Header = styled.div`
-    height: 136px;
-    background-color: #2dbcad;
-    display: flex;
-`
-const HeaderInfo = styled.div`
-    padding: 0 16px;
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-`
-const HeaderAvatar = styled.div`
-    flex: 1;
-    padding: 4px;
-`
-const InputName = styled.input`
-    font-size: 28px;
-    font-weight: 550;
-    color: #fff;
-    padding: 4px 16px;
-    border-radius: 6px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-
-    &:focus {
-        background-color: #fff;
-        color: #333;
-    }
-`
-const InputPosition = styled.input`
-    font-size: 16px;
-    color: #fff;
-    padding: 2px 16px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    background-color: transparent;
-
-    &:focus {
-        background-color: #fff;
-        color: #333;
-    }
-`
-const Content = styled.div`
-    display: flex;
-`
-const LeftContent = styled.div`
-    flex: 1;
-`
-const RightContent = styled.div`
-    flex: 1;
-`
-
-export default TemplateTwo
-=======
 import React from "react";
 import styled from "styled-components";
 
@@ -143,32 +5,57 @@ const TemplateTwo = () => {
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
-                <ContentLeft>   
+                <ContentLeft>
                     <WrapperAvatar>
                         <Name>
                             Trần Gia Bảo{" "}
-                            <p className='job'>
-                                Web Developer Internship
-                            </p>
+                            <p className='job'>Web Developer Internship</p>
                         </Name>
                         <Image>
                             <div>
-                                <img src='../images/avatar/Untitled-2.png' alt='' />
+                                <img
+                                    src='../images/avatar/Untitled-2.png'
+                                    alt=''
+                                />
                             </div>
                         </Image>
                     </WrapperAvatar>
                     {/* contact */}
                     <Contact>
                         <div className='box-highlight'>Contact infomation</div>
-                        <div className="wrap-inform">
+                        <div className='wrap-inform'>
                             <ul>
-                                <li className="birthday"><i class="fas fa-calendar-week"></i> 17/3/2000</li>
-                                <li className="sex"><i class="fas fa-male"></i> Nam</li>
-                                <li className="phone"><i class="fas fa-mobile-alt"></i> (024) 6680 5588</li>
-                                <li className="mail"><i class="far fa-envelope"></i> trangiabao@gmail.com</li>
-                                <li className="address"><i class="fas fa-map-marked-alt"></i> 52/13 Bình phú p11 q Bình Tân</li>
-                                <li className="facebook"><i class="fab fa-facebook-f"></i> <a href=">https://fb.com">https://fb.com </a> </li>
-                                <li className="github"><i class="fab fa-github"></i> <a href="https://github.com">https://github.com </a> </li>
+                                <li className='birthday'>
+                                    <i class='fas fa-calendar-week'></i>{" "}
+                                    17/3/2000
+                                </li>
+                                <li className='sex'>
+                                    <i class='fas fa-male'></i> Nam
+                                </li>
+                                <li className='phone'>
+                                    <i class='fas fa-mobile-alt'></i> (024) 6680
+                                    5588
+                                </li>
+                                <li className='mail'>
+                                    <i class='far fa-envelope'></i>{" "}
+                                    trangiabao@gmail.com
+                                </li>
+                                <li className='address'>
+                                    <i class='fas fa-map-marked-alt'></i> 52/13
+                                    Bình phú p11 q Bình Tân
+                                </li>
+                                <li className='facebook'>
+                                    <i class='fab fa-facebook-f'></i>{" "}
+                                    <a href='>https://fb.com'>
+                                        https://fb.com{" "}
+                                    </a>{" "}
+                                </li>
+                                <li className='github'>
+                                    <i class='fab fa-github'></i>{" "}
+                                    <a href='https://github.com'>
+                                        https://github.com{" "}
+                                    </a>{" "}
+                                </li>
                             </ul>
                         </div>
                     </Contact>
@@ -201,10 +88,16 @@ const TemplateTwo = () => {
                     <Description>
                         <div className='box-highlight'>Objective</div>
                         <Content>
-                            <div className='description'>Take advantages of sales skills & experience and understanding of market to become a professional Sales Staff and bring a lot value to Customers. From that, I will contribute to development of TOPCV Company.</div>
-                        </Content> 
+                            <div className='description'>
+                                Take advantages of sales skills & experience and
+                                understanding of market to become a professional
+                                Sales Staff and bring a lot value to Customers.
+                                From that, I will contribute to development of
+                                TOPCV Company.
+                            </div>
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                     <Description>
                         <div className='box-highlight'>Education</div>
                         <Content>
@@ -216,26 +109,22 @@ const TemplateTwo = () => {
                                     <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    
                                 </div>
                             </div>
                             <div className='description'>
-                                Lorem ipsum potro anot lang Lorem ipsum
-                                potro anot langLorem ipsum potro anot
-                                lang Lorem ipsum potro anot langLorem
-                                ipsum potro anot lang Lorem ipsum potro
-                                anot lang
+                                Lorem ipsum potro anot lang Lorem ipsum potro
+                                anot langLorem ipsum potro anot lang Lorem ipsum
+                                potro anot langLorem ipsum potro anot lang Lorem
+                                ipsum potro anot lang
                             </div>
-                        </Content>  
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                     <Description>
                         <div className='box-highlight'>Work experience</div>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>
-                                    Sales Staff
-                                </div>
+                                <div className='titles'>Sales Staff</div>
                                 <div className='time'>
                                     <span className='time-range'>
                                         June 2014 - Present
@@ -243,18 +132,17 @@ const TemplateTwo = () => {
                                 </div>
                             </div>
                             <div className='description'>
-                                Main responsibilities:
-                                - Write and upload product advertising post via Facebook, Forum...
-                                - Introduce, consult products and answer customers' queries via phone and email.
-                                - Assist to control goods in and out
-                                - Attend Sales Skill Course in the Company
+                                Main responsibilities: - Write and upload
+                                product advertising post via Facebook, Forum...
+                                - Introduce, consult products and answer
+                                customers' queries via phone and email. - Assist
+                                to control goods in and out - Attend Sales Skill
+                                Course in the Company
                             </div>
                         </Content>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>
-                                    Sales Staff
-                                </div>
+                                <div className='titles'>Sales Staff</div>
                                 <div className='time'>
                                     <span className='time-range'>
                                         June 2014 - Present
@@ -262,15 +150,16 @@ const TemplateTwo = () => {
                                 </div>
                             </div>
                             <div className='description'>
-                                Main responsibilities:
-                                - Write and upload product advertising post via Facebook, Forum...
-                                - Introduce, consult products and answer customers' queries via phone and email.
-                                - Assist to control goods in and out
-                                - Attend Sales Skill Course in the Company
+                                Main responsibilities: - Write and upload
+                                product advertising post via Facebook, Forum...
+                                - Introduce, consult products and answer
+                                customers' queries via phone and email. - Assist
+                                to control goods in and out - Attend Sales Skill
+                                Course in the Company
                             </div>
-                        </Content>  
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                     <Description>
                         <div className='box-highlight'>Activities</div>
                         <Content>
@@ -282,50 +171,50 @@ const TemplateTwo = () => {
                                     <span className='time-range'>
                                         Jan 2014- Feb 2014
                                     </span>
-                                    
                                 </div>
                             </div>
                             <div className='description'>
-                                - Organize monthly events, network with US alumni <br />
-                                - Share how to hunt scholarships and US student's life experiences to all students who have received offers from US universities
+                                - Organize monthly events, network with US
+                                alumni <br />- Share how to hunt scholarships
+                                and US student's life experiences to all
+                                students who have received offers from US
+                                universities
                             </div>
-                        </Content>  
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                     <Description>
                         <div className='box-highlight'>Honors & Awards</div>
                         <Content>
                             <div className='description awards'>
-                                <strong>2013-2014 :</strong> Scholarship in 2nd semester 2012-2013 and 1st semester 2013-2014 
+                                <strong>2013-2014 :</strong> Scholarship in 2nd
+                                semester 2012-2013 and 1st semester 2013-2014
                             </div>
-                        </Content>  
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                     <Description>
                         <div className='box-highlight'>Certifications</div>
                         <Content>
                             <div className='description certifications'>
-                                <strong>2014 :</strong> TOEIC Certificate with score 800 issued by TDT
+                                <strong>2014 :</strong> TOEIC Certificate with
+                                score 800 issued by TDT
                             </div>
-                        </Content>  
+                        </Content>
                     </Description>
-                    <hr /> 
+                    <hr />
                 </ContentRight>
             </WrapperContent>
-        </WrapperTemplate>        
-        
-        
-    )
-}
-const WrapperTemplate = styled.div`
-    
-`;
+        </WrapperTemplate>
+    );
+};
+const WrapperTemplate = styled.div``;
 const WrapperContent = styled.div`
-    font-family: 'Roboto', sans-serif !important;
+    font-family: "Roboto", sans-serif !important;
     padding: 20px;
     width: 100%;
     min-height: 100vh;
-    
+
     background-color: white;
     display: flex;
     align-items: flex-start;
@@ -352,7 +241,7 @@ const WrapperContent = styled.div`
 const ContentLeft = styled.div`
     width: 35%;
     height: 100vh;
-    background-color: #FFFAF2;
+    background-color: #fffaf2;
 `;
 const WrapperAvatar = styled.div`
     width: 100%;
@@ -363,28 +252,27 @@ const WrapperAvatar = styled.div`
     margin-bottom: 20px;
 `;
 const Contact = styled.div`
-    ul{
+    ul {
         padding-left: 18px;
         list-style: none;
         display: flex;
         flex-direction: column;
 
-        li{
+        li {
             display: block;
             margin: 2px 0;
-            i{
+            i {
                 display: inline-block;
                 color: orange;
                 width: 2rem;
                 height: 1rem;
             }
-            a{
+            a {
                 text-decoration: none;
                 color: black;
             }
         }
     }
-
 `;
 
 const SkillProgress = styled.div`
@@ -408,7 +296,7 @@ const ProgressBar = styled.div`
     border: 2px solid orange;
     height: 20px;
     overflow: hidden;
-    
+
     .inner-progress {
         border-radius: 0 5px 13px 0;
         background-color: orange;
@@ -417,10 +305,9 @@ const ProgressBar = styled.div`
     }
 `;
 const Interests = styled.div`
-    p{
-        padding-left:1.5rem ;
+    p {
+        padding-left: 1.5rem;
     }
-
 `;
 const Name = styled.div`
     width: 100%;
@@ -431,7 +318,7 @@ const Name = styled.div`
     font-weight: bold;
     text-transform: uppercase;
     background-color: none;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,10 +341,10 @@ const Image = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    div{
+    div {
         width: 95%;
         height: 95%;
-        border-radius:50%;
+        border-radius: 50%;
         background-color: orange;
         display: flex;
         align-items: center;
@@ -468,14 +355,13 @@ const Image = styled.div`
             max-width: 160px;
         }
     }
-    
 `;
 
 // right
 const ContentRight = styled.div`
     width: 64%;
     height: 100vh;
-    background-color: #FFFAF2;
+    background-color: #fffaf2;
 `;
 
 const Description = styled.div`
@@ -486,39 +372,35 @@ const Description = styled.div`
 const Content = styled.div`
     padding-left: 1.1rem;
     margin: 10px 0px;
-    .wrap-content{
+    .wrap-content {
         width: 98%;
         display: flex;
         justify-content: space-between;
-        .titles{
+        .titles {
             font-weight: bold;
             font-size: 16px;
         }
-        .time{
+        .time {
             font-style: italic;
-            color:#A8A8A8;
+            color: #a8a8a8;
         }
-
     }
     .description {
-        padding:5px;
+        padding: 5px;
         width: 92%;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         flex-direction: column;
-        .p{
+        .p {
             padding: 0;
             margin: 0 !important;
         }
     }
-    .awards,.certifications {
+    .awards,
+    .certifications {
         flex-direction: row;
     }
-
 `;
 
-
-
 export default TemplateTwo;
->>>>>>> f3cbd2278dc92f0a1969c779ecbe10205fd69081

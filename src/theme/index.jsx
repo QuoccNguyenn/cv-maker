@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components";
 
 export const FixedGlobalStyle = createGlobalStyle`
     *{
@@ -15,6 +15,6 @@ export const FixedGlobalStyle = createGlobalStyle`
         background-color: #fff;
         margin-right: auto;
         margin-left: auto;
-        margin-bottom: 200px;
+        margin-bottom: 20px;
     }
-`
+`;

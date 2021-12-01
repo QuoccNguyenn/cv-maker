@@ -1,15 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const TemplateTwo = () => {
+const TemplateTwo = ({ info, education }) => {
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
                 <ContentLeft>
                     <WrapperAvatar>
                         <Name>
-                            Trần Gia Bảo{" "}
-                            <p className='job'>Web Developer Internship</p>
+                            {info.name} <p className='job'>{info.position}</p>
                         </Name>
                         <Image>
                             <div>
@@ -30,19 +29,18 @@ const TemplateTwo = () => {
                                     17/3/2000
                                 </li>
                                 <li className='sex'>
-                                    <i class='fas fa-male'></i> Nam
+                                    <i class='fas fa-male'></i> {info.gender}
                                 </li>
                                 <li className='phone'>
-                                    <i class='fas fa-mobile-alt'></i> (024) 6680
-                                    5588
+                                    <i class='fas fa-mobile-alt'></i>{" "}
+                                    {info.phone}
                                 </li>
                                 <li className='mail'>
-                                    <i class='far fa-envelope'></i>{" "}
-                                    trangiabao@gmail.com
+                                    <i class='far fa-envelope'></i> {info.mail}
                                 </li>
                                 <li className='address'>
                                     <i class='fas fa-map-marked-alt'></i> 52/13
-                                    Bình phú p11 q Bình Tân
+                                    {info.phone}
                                 </li>
                                 <li className='facebook'>
                                     <i class='fab fa-facebook-f'></i>{" "}
@@ -102,20 +100,15 @@ const TemplateTwo = () => {
                         <div className='box-highlight'>Education</div>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>
-                                    Ton Duc Thang University
-                                </div>
+                                <div className='titles'>{education.school}</div>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        {education.time}
                                     </span>
                                 </div>
                             </div>
                             <div className='description'>
-                                Lorem ipsum potro anot lang Lorem ipsum potro
-                                anot langLorem ipsum potro anot lang Lorem ipsum
-                                potro anot langLorem ipsum potro anot lang Lorem
-                                ipsum potro anot lang
+                                {education.description}
                             </div>
                         </Content>
                     </Description>

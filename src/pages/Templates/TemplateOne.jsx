@@ -1,20 +1,18 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const TemplateOne = () => {
+const TemplateOne = ({ info, education }) => {
     return (
-        <WrapperTemplate className="container">
+        <WrapperTemplate className='container'>
             <WrapperContent>
                 <ContentLeft>
                     <WrapperAvatar>
                         <Image>
-                            <img src="../images/avatar/Untitled-2.png" alt="" />
+                            <img src='../images/avatar/Untitled-2.png' alt='' />
                         </Image>
                         <Name>
-                            Andrew Johnson{' '}
-                            <span className="job">
-                                Web Developer Internship
-                            </span>
+                            {info.name}{" "}
+                            <span className='job'>{info.position}</span>
                         </Name>
                     </WrapperAvatar>
                     <Description>
@@ -22,48 +20,38 @@ const TemplateOne = () => {
                             <span>Education</span>
                         </Header>
                         <Content>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
-                                        2018-2022
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
+                                        {education.time}
                                     </span>
-                                    <span className="place">
-                                        Ton Duc Thang University
+                                    <span className='place'>
+                                        {education.school}
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
-                                        <textarea
-                                            name=""
-                                            id=""
-                                            cols="30"
-                                            rows="1"
-                                            className="input"
-                                        ></textarea>
+                                <div className='description'>
+                                    {/* <span className='position'>
+                                        Computer Science
+                                    </span> */}
+                                    <span className='detail'>
+                                        {education.description}
                                     </span>
-                                    <textarea
-                                        name=""
-                                        id=""
-                                        cols="30"
-                                        rows="6"
-                                        className="input"
-                                    ></textarea>
                                 </div>
                             </div>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    <span className="place">
+                                    <span className='place'>
                                         Ton Duc Thang University
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
+                                <div className='description'>
+                                    <span className='position'>
                                         Computer Science
                                     </span>
-                                    <span className="detail">
+                                    <span className='detail'>
                                         Lorem ipsum potro anot lang Lorem ipsum
                                         potro anot langLorem ipsum potro anot
                                         lang Lorem ipsum potro anot langLorem
@@ -72,20 +60,20 @@ const TemplateOne = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    <span className="place">
+                                    <span className='place'>
                                         Ton Duc Thang University
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
+                                <div className='description'>
+                                    <span className='position'>
                                         Computer Science
                                     </span>
-                                    <span className="detail">
+                                    <span className='detail'>
                                         Lorem ipsum potro anot lang Lorem ipsum
                                         potro anot langLorem ipsum potro anot
                                         lang Lorem ipsum potro anot langLorem
@@ -101,20 +89,20 @@ const TemplateOne = () => {
                             <span>Experience</span>
                         </Header>
                         <Content>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    <span className="place">
+                                    <span className='place'>
                                         Ton Duc Thang University
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
+                                <div className='description'>
+                                    <span className='position'>
                                         Computer Science
                                     </span>
-                                    <span className="detail">
+                                    <span className='detail'>
                                         Lorem ipsum potro anot lang Lorem ipsum
                                         potro anot langLorem ipsum potro anot
                                         lang Lorem ipsum potro anot langLorem
@@ -123,20 +111,20 @@ const TemplateOne = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    <span className="place">
+                                    <span className='place'>
                                         Ton Duc Thang University
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
+                                <div className='description'>
+                                    <span className='position'>
                                         Computer Science
                                     </span>
-                                    <span className="detail">
+                                    <span className='detail'>
                                         Lorem ipsum potro anot lang Lorem ipsum
                                         potro anot langLorem ipsum potro anot
                                         lang Lorem ipsum potro anot langLorem
@@ -145,20 +133,20 @@ const TemplateOne = () => {
                                     </span>
                                 </div>
                             </div>
-                            <div className="wrap-content">
-                                <div className="time">
-                                    <span className="time-range">
+                            <div className='wrap-content'>
+                                <div className='time'>
+                                    <span className='time-range'>
                                         2018-2022
                                     </span>
-                                    <span className="place">
+                                    <span className='place'>
                                         Ton Duc Thang University
                                     </span>
                                 </div>
-                                <div className="description">
-                                    <span className="position">
+                                <div className='description'>
+                                    <span className='position'>
                                         Computer Science
                                     </span>
-                                    <span className="detail">
+                                    <span className='detail'>
                                         Lorem ipsum potro anot lang Lorem ipsum
                                         potro anot langLorem ipsum potro anot
                                         lang Lorem ipsum potro anot langLorem
@@ -169,76 +157,72 @@ const TemplateOne = () => {
                             </div>
                         </Content>
                     </Description>
-                    <div className="liner"></div>
+                    <div className='liner'></div>
                 </ContentLeft>
                 <ContentRight>
                     <Contact>
-                        <div className="box-highlight">Contact Me</div>
-                        <div className="wrap-inform">
-                            <div className="icon">
+                        <div className='box-highlight'>Contact Me</div>
+                        <div className='wrap-inform'>
+                            <div className='icon'>
                                 <img
-                                    src="../images/icons/map-marker.svg"
-                                    alt=""
+                                    src='../images/icons/map-marker.svg'
+                                    alt=''
                                 />
                             </div>
-                            <div className="content">
-                                <span className="title">ADDRESS</span>
-                                <span>
-                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
-                                </span>
+                            <div className='content'>
+                                <span className='title'>ADDRESS</span>
+                                <span>{info.address}</span>
                             </div>
                         </div>
-                        <div className="wrap-inform">
-                            <div className="icon">
-                                <img src="../images/icons/globe.svg" alt="" />
+                        <div className='wrap-inform'>
+                            <div className='icon'>
+                                <img src='../images/icons/globe.svg' alt='' />
                             </div>
-                            <div className="content">
-                                <span className="title">WEB</span>
-                                <span>
-                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
-                                </span>
+                            <div className='content'>
+                                <span className='title'>WEB</span>
+                                <span>{info.mail}</span>
                             </div>
                         </div>
-                        <div className="wrap-inform">
-                            <div className="icon">
-                                <img src="../images/icons/phone.svg" alt="" />
+                        <div className='wrap-inform'>
+                            <div className='icon'>
+                                <img src='../images/icons/phone.svg' alt='' />
                             </div>
-                            <div className="content">
-                                <span className="title">PHONE</span>
-                                <span>0000000000</span>
+                            <div className='content'>
+                                <span className='title'>PHONE</span>
+                                <span>{info.phone}</span>
                             </div>
                         </div>
-                        <div className="box-highlight">Skill</div>
+                        <div className='box-highlight'>Skill</div>
                         <SkillProgress>
-                            <div className="skill">HTML/CSS</div>
+                            <div className='skill'>HTML/CSS</div>
                             <ProgressBar>
-                                <div className="inner-progress"></div>
+                                <div className='inner-progress'></div>
                             </ProgressBar>
-                            <div className="skill">HTML/CSS</div>
+                            <div className='skill'>HTML/CSS</div>
                             <ProgressBar>
-                                <div className="inner-progress"></div>
+                                <div className='inner-progress'></div>
                             </ProgressBar>
-                            <div className="skill">HTML/CSS</div>
+                            <div className='skill'>HTML/CSS</div>
                             <ProgressBar>
-                                <div className="inner-progress"></div>
+                                <div className='inner-progress'></div>
                             </ProgressBar>
                         </SkillProgress>
                     </Contact>
                     <SocialIcons>
                         <img
-                            src="../images/icons/instagram-brands.svg"
-                            alt=""
+                            src='../images/icons/instagram-brands.svg'
+                            alt=''
                         />
-                        <img src="../images/icons/facebook-brands.svg" alt="" />
-                        <img src="../images/icons/twitter-brands.svg" alt="" />
+                        <img src='../images/icons/facebook-brands.svg' alt='' />
+                        <img src='../images/icons/twitter-brands.svg' alt='' />
                     </SocialIcons>
                 </ContentRight>
             </WrapperContent>
         </WrapperTemplate>
-    )
-}
+    );
+};
 
-const WrapperTemplate = styled.div``
+const WrapperTemplate = styled.div``;
 const WrapperContent = styled.div`
     width: 100%;
     background-color: black;
@@ -246,7 +230,7 @@ const WrapperContent = styled.div`
     align-items: flex-start;
     justify-content: space-between;
     box-shadow: 9px 9px 16px #0000001f, -9px -9px 16px #0000001f;
-`
+`;
 const ContentLeft = styled.div`
     width: 60%;
     background-color: white;
@@ -260,18 +244,18 @@ const ContentLeft = styled.div`
         width: 100%;
         background-color: orange;
     }
-`
+`;
 const ContentRight = styled.div`
     width: 40%;
     padding-top: 25%;
     color: white;
-`
+`;
 const WrapperAvatar = styled.div`
     width: fit-content;
     margin: 2rem;
     margin-left: 50%;
     position: relative;
-`
+`;
 const Image = styled.div`
     width: 160px;
     height: 160px;
@@ -289,7 +273,7 @@ const Image = styled.div`
         width: 65%;
         max-width: 160px;
     }
-`
+`;
 const Name = styled.div`
     width: 100%;
     min-width: 360px;
@@ -317,10 +301,10 @@ const Name = styled.div`
         font-weight: normal;
         text-transform: capitalize;
     }
-`
+`;
 const Description = styled.div`
     padding-right: 2rem;
-`
+`;
 const Header = styled.div`
     width: 100%;
     font-size: 26px;
@@ -331,7 +315,7 @@ const Header = styled.div`
     background-color: orange;
     padding: 0.5rem 1rem;
     box-shadow: 9px 9px 16px #00000038, -9px -9px 16px #0000001f;
-`
+`;
 const Content = styled.div`
     padding: 10px 1.5rem;
     .wrap-content {
@@ -360,9 +344,10 @@ const Content = styled.div`
         }
     }
     .detail {
+        max-width: 100%;
         font-size: 13px;
     }
-`
+`;
 
 const Contact = styled.div`
     padding: 0 3rem;
@@ -398,7 +383,7 @@ const Contact = styled.div`
         text-transform: uppercase;
         font-weight: bold;
     }
-`
+`;
 const SkillProgress = styled.div`
     padding: 2rem 0 1.5rem;
     .skill {
@@ -408,7 +393,7 @@ const SkillProgress = styled.div`
         text-align: center;
         padding: 10px 0;
     }
-`
+`;
 const ProgressBar = styled.div`
     padding: 0;
     width: 100%;
@@ -421,7 +406,7 @@ const ProgressBar = styled.div`
         width: 50%;
         height: 25px;
     }
-`
+`;
 const SocialIcons = styled.div`
     margin-top: 4rem;
     display: flex;
@@ -431,5 +416,5 @@ const SocialIcons = styled.div`
     img {
         width: 22px;
     }
-`
-export default TemplateOne
+`;
+export default TemplateOne;

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import InformationField from "../../components/InformationField";
 import TemplateOne from "../Templates/TemplateOne";
+import TemplateTwo from "../Templates/TemplateTwo";
 
 const Home = () => {
     const [info, setInfo] = useState({
@@ -27,6 +28,7 @@ const Home = () => {
                 setEducation={setEducation}
             />
             <TemplateOne info={info} education={education} />
+            <TemplateTwo />
         </HomeWrapper>
     );
 };

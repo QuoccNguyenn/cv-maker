@@ -7,429 +7,400 @@ const TemplateTwo = () => {
             <WrapperContent>
                 <ContentLeft>
                     <WrapperAvatar>
-                        <Image>
-                            <img src='../images/avatar/Untitled-2.png' alt='' />
-                        </Image>
                         <Name>
-                            Andrew Johnson{" "}
-                            <span className='job'>
-                                Web Developer Internship
-                            </span>
+                            Trần Gia Bảo{" "}
+                            <p className='job'>Web Developer Internship</p>
                         </Name>
-                    </WrapperAvatar>
-                    <Description>
-                        <Header>
-                            <span>Education</span>
-                        </Header>
-                        <Content>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        <textarea
-                                            name=''
-                                            id=''
-                                            cols='30'
-                                            rows='1'
-                                            className='input'
-                                        ></textarea>
-                                    </span>
-                                    <textarea
-                                        name=''
-                                        id=''
-                                        cols='30'
-                                        rows='6'
-                                        className='input'
-                                    ></textarea>
-                                </div>
-                            </div>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
-                                    </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
-                                </div>
-                            </div>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
-                                    </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
-                                </div>
-                            </div>
-                        </Content>
-                    </Description>
-                    <Description>
-                        <Header>
-                            <span>Experience</span>
-                        </Header>
-                        <Content>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
-                                    </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
-                                </div>
-                            </div>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
-                                    </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
-                                </div>
-                            </div>
-                            <div className='wrap-content'>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        2018-2022
-                                    </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
-                                    </span>
-                                </div>
-                                <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
-                                    </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
-                                </div>
-                            </div>
-                        </Content>
-                    </Description>
-                    <div className='liner'></div>
-                </ContentLeft>
-                <ContentRight>
-                    <Contact>
-                        <div className='box-highlight'>Contact Me</div>
-                        <div className='wrap-inform'>
-                            <div className='icon'>
+                        <Image>
+                            <div>
                                 <img
-                                    src='../images/icons/map-marker.svg'
+                                    src='../images/avatar/Untitled-2.png'
                                     alt=''
                                 />
                             </div>
-                            <div className='content'>
-                                <span className='title'>ADDRESS</span>
-                                <span>
-                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
-                                </span>
-                            </div>
-                        </div>
+                        </Image>
+                    </WrapperAvatar>
+                    {/* contact */}
+                    <Contact>
+                        <div className='box-highlight'>Contact infomation</div>
                         <div className='wrap-inform'>
-                            <div className='icon'>
-                                <img src='../images/icons/globe.svg' alt='' />
-                            </div>
-                            <div className='content'>
-                                <span className='title'>WEB</span>
-                                <span>
-                                    17 Nguyen Huu Tho, Phuong Tan Phong, Quan 7
-                                </span>
-                            </div>
+                            <ul>
+                                <li className='birthday'>
+                                    <i class='fas fa-calendar-week'></i>{" "}
+                                    17/3/2000
+                                </li>
+                                <li className='sex'>
+                                    <i class='fas fa-male'></i> Nam
+                                </li>
+                                <li className='phone'>
+                                    <i class='fas fa-mobile-alt'></i> (024) 6680
+                                    5588
+                                </li>
+                                <li className='mail'>
+                                    <i class='far fa-envelope'></i>{" "}
+                                    trangiabao@gmail.com
+                                </li>
+                                <li className='address'>
+                                    <i class='fas fa-map-marked-alt'></i> 52/13
+                                    Bình phú p11 q Bình Tân
+                                </li>
+                                <li className='facebook'>
+                                    <i class='fab fa-facebook-f'></i>{" "}
+                                    <a href='>https://fb.com'>
+                                        https://fb.com{" "}
+                                    </a>{" "}
+                                </li>
+                                <li className='github'>
+                                    <i class='fab fa-github'></i>{" "}
+                                    <a href='https://github.com'>
+                                        https://github.com{" "}
+                                    </a>{" "}
+                                </li>
+                            </ul>
                         </div>
-                        <div className='wrap-inform'>
-                            <div className='icon'>
-                                <img src='../images/icons/phone.svg' alt='' />
-                            </div>
-                            <div className='content'>
-                                <span className='title'>PHONE</span>
-                                <span>0000000000</span>
-                            </div>
-                        </div>
-                        <div className='box-highlight'>Skill</div>
-                        <SkillProgress>
-                            <div className='skill'>HTML/CSS</div>
-                            <ProgressBar>
-                                <div className='inner-progress'></div>
-                            </ProgressBar>
-                            <div className='skill'>HTML/CSS</div>
-                            <ProgressBar>
-                                <div className='inner-progress'></div>
-                            </ProgressBar>
-                            <div className='skill'>HTML/CSS</div>
-                            <ProgressBar>
-                                <div className='inner-progress'></div>
-                            </ProgressBar>
-                        </SkillProgress>
                     </Contact>
-                    <SocialIcons>
-                        <img
-                            src='../images/icons/instagram-brands.svg'
-                            alt=''
-                        />
-                        <img src='../images/icons/facebook-brands.svg' alt='' />
-                        <img src='../images/icons/twitter-brands.svg' alt='' />
-                    </SocialIcons>
+                    <hr />
+                    {/* skill */}
+                    <div className='box-highlight'>Skill</div>
+                    <SkillProgress>
+                        <div className='skill'>HTML/CSS</div>
+                        <ProgressBar>
+                            <div className='inner-progress'></div>
+                        </ProgressBar>
+                        <div className='skill'>HTML/CSS</div>
+                        <ProgressBar>
+                            <div className='inner-progress'></div>
+                        </ProgressBar>
+                        <div className='skill'>HTML/CSS</div>
+                        <ProgressBar>
+                            <div className='inner-progress'></div>
+                        </ProgressBar>
+                    </SkillProgress>
+                    <hr />
+                    {/* sở thích */}
+                    <Interests>
+                        <div className='box-highlight'>Interests</div>
+                        <p>I like soccer, music..</p>
+                    </Interests>
+                </ContentLeft>
+
+                <ContentRight>
+                    <Description>
+                        <div className='box-highlight'>Objective</div>
+                        <Content>
+                            <div className='description'>
+                                Take advantages of sales skills & experience and
+                                understanding of market to become a professional
+                                Sales Staff and bring a lot value to Customers.
+                                From that, I will contribute to development of
+                                TOPCV Company.
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
+                    <Description>
+                        <div className='box-highlight'>Education</div>
+                        <Content>
+                            <div className='wrap-content'>
+                                <div className='titles'>
+                                    Ton Duc Thang University
+                                </div>
+                                <div className='time'>
+                                    <span className='time-range'>
+                                        2018-2022
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='description'>
+                                Lorem ipsum potro anot lang Lorem ipsum potro
+                                anot langLorem ipsum potro anot lang Lorem ipsum
+                                potro anot langLorem ipsum potro anot lang Lorem
+                                ipsum potro anot lang
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
+                    <Description>
+                        <div className='box-highlight'>Work experience</div>
+                        <Content>
+                            <div className='wrap-content'>
+                                <div className='titles'>Sales Staff</div>
+                                <div className='time'>
+                                    <span className='time-range'>
+                                        June 2014 - Present
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='description'>
+                                Main responsibilities: - Write and upload
+                                product advertising post via Facebook, Forum...
+                                - Introduce, consult products and answer
+                                customers' queries via phone and email. - Assist
+                                to control goods in and out - Attend Sales Skill
+                                Course in the Company
+                            </div>
+                        </Content>
+                        <Content>
+                            <div className='wrap-content'>
+                                <div className='titles'>Sales Staff</div>
+                                <div className='time'>
+                                    <span className='time-range'>
+                                        June 2014 - Present
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='description'>
+                                Main responsibilities: - Write and upload
+                                product advertising post via Facebook, Forum...
+                                - Introduce, consult products and answer
+                                customers' queries via phone and email. - Assist
+                                to control goods in and out - Attend Sales Skill
+                                Course in the Company
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
+                    <Description>
+                        <div className='box-highlight'>Activities</div>
+                        <Content>
+                            <div className='wrap-content'>
+                                <div className='titles'>
+                                    Member of US Ambassador
+                                </div>
+                                <div className='time'>
+                                    <span className='time-range'>
+                                        Jan 2014- Feb 2014
+                                    </span>
+                                </div>
+                            </div>
+                            <div className='description'>
+                                - Organize monthly events, network with US
+                                alumni <br />- Share how to hunt scholarships
+                                and US student's life experiences to all
+                                students who have received offers from US
+                                universities
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
+                    <Description>
+                        <div className='box-highlight'>Honors & Awards</div>
+                        <Content>
+                            <div className='description awards'>
+                                <strong>2013-2014 :</strong> Scholarship in 2nd
+                                semester 2012-2013 and 1st semester 2013-2014
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
+                    <Description>
+                        <div className='box-highlight'>Certifications</div>
+                        <Content>
+                            <div className='description certifications'>
+                                <strong>2014 :</strong> TOEIC Certificate with
+                                score 800 issued by TDT
+                            </div>
+                        </Content>
+                    </Description>
+                    <hr />
                 </ContentRight>
             </WrapperContent>
         </WrapperTemplate>
     );
 };
-
 const WrapperTemplate = styled.div``;
 const WrapperContent = styled.div`
+    font-family: "Roboto", sans-serif !important;
+    padding: 20px;
     width: 100%;
-    background-color: black;
+    min-height: 100vh;
+
+    background-color: white;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     box-shadow: 9px 9px 16px #0000001f, -9px -9px 16px #0000001f;
-`;
-const ContentLeft = styled.div`
-    width: 60%;
-    background-color: white;
-    textarea {
-        width: 100%;
-        font-weight: 300;
-        line-height: 1.5;
-    }
-    .liner {
-        height: 25px;
-        width: 100%;
-        background-color: orange;
-    }
-`;
-const ContentRight = styled.div`
-    width: 40%;
-    padding-top: 25%;
-    color: white;
-`;
-const WrapperAvatar = styled.div`
-    width: fit-content;
-    margin: 2rem;
-    margin-left: 50%;
-    position: relative;
-`;
-const Image = styled.div`
-    width: 160px;
-    height: 160px;
-    background-color: orange;
-    border-radius: 50%;
-    border: 6px solid black;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    position: relative;
-    z-index: 2;
-    img {
-        width: 65%;
-        max-width: 160px;
-    }
-`;
-const Name = styled.div`
-    width: 100%;
-    min-width: 360px;
-    padding: 1rem 2rem 1rem 3rem;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: orange;
-
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    transform: translate(-30px, -50%);
-    z-index: 1;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 6px;
-
-    span {
-        font-size: 24px;
-        font-weight: normal;
-        text-transform: capitalize;
-    }
-`;
-const Description = styled.div`
-    padding-right: 2rem;
-`;
-const Header = styled.div`
-    width: 100%;
-    font-size: 26px;
-    font-weight: bold;
-    text-align: right;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    background-color: orange;
-    padding: 0.5rem 1rem;
-    box-shadow: 9px 9px 16px #00000038, -9px -9px 16px #0000001f;
-`;
-const Content = styled.div`
-    padding: 10px 1.5rem;
-    .wrap-content {
-        width: 100%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        padding: 1rem 5px;
-    }
-    .time,
-    .description {
-        width: 50%;
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        flex-direction: column;
-    }
-    .place {
-        text-transform: capitalize;
-    }
-    .position {
-        text-transform: uppercase;
-        textarea {
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-    }
-    .detail {
-        font-size: 13px;
-    }
-`;
-
-const Contact = styled.div`
-    padding: 0 3rem;
     .box-highlight {
         max-width: 100%;
-        border: 4px solid orange;
         padding: 10px 1rem;
-        text-transform: uppercase;
-        font-size: 28px;
-        text-align: center;
-    }
-    .wrap-inform {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        gap: 6px;
-        padding: 1.5rem;
-    }
-    .icon {
-        padding: 10px;
-        img {
-            width: 22px;
-        }
-    }
-    .content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 5px;
-    }
-    .title {
-        text-transform: uppercase;
+        color: orange;
+        font-size: 1.2rem;
+        text-align: left;
         font-weight: bold;
     }
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid orange;
+        margin: auto;
+        width: 80%;
+    }
 `;
+//left
+const ContentLeft = styled.div`
+    width: 35%;
+    height: 100vh;
+    background-color: #fffaf2;
+`;
+const WrapperAvatar = styled.div`
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+`;
+const Contact = styled.div`
+    ul {
+        padding-left: 18px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        li {
+            display: block;
+            margin: 2px 0;
+            i {
+                display: inline-block;
+                color: orange;
+                width: 2rem;
+                height: 1rem;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+        }
+    }
+`;
+
 const SkillProgress = styled.div`
-    padding: 2rem 0 1.5rem;
+    margin: 1rem 1.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+    align-items: flex-start;
     .skill {
         text-transform: uppercase;
         font-weight: 600;
-        font-size: 26px;
+        font-size: 18px;
         text-align: center;
         padding: 10px 0;
     }
 `;
 const ProgressBar = styled.div`
     padding: 0;
-    width: 100%;
+    width: 80%;
     border: 2px solid orange;
-    height: 25px;
+    height: 20px;
     overflow: hidden;
 
     .inner-progress {
+        border-radius: 0 5px 13px 0;
         background-color: orange;
         width: 50%;
         height: 25px;
     }
 `;
-const SocialIcons = styled.div`
-    margin-top: 4rem;
+const Interests = styled.div`
+    p {
+        padding-left: 1.5rem;
+    }
+`;
+const Name = styled.div`
+    width: 100%;
+    min-width: 360px;
+    padding: 1rem 2rem 1rem 3rem;
+    color: orange;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    p {
+        text-align: left;
+        font-size: 24px;
+        font-weight: normal;
+        text-transform: capitalize;
+    }
+`;
+const Image = styled.div`
+    width: 160px;
+    height: 160px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid orange;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-    img {
-        width: 22px;
+    div {
+        width: 95%;
+        height: 95%;
+        border-radius: 50%;
+        background-color: orange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            margin: 5px;
+            width: 65%;
+            max-width: 160px;
+        }
     }
 `;
+
+// right
+const ContentRight = styled.div`
+    width: 64%;
+    height: 100vh;
+    background-color: #fffaf2;
+`;
+
+const Description = styled.div`
+    width: 100%;
+    margin: 20px 0px;
+`;
+
+const Content = styled.div`
+    padding-left: 1.1rem;
+    margin: 10px 0px;
+    .wrap-content {
+        width: 98%;
+        display: flex;
+        justify-content: space-between;
+        .titles {
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .time {
+            font-style: italic;
+            color: #a8a8a8;
+        }
+    }
+    .description {
+        padding: 5px;
+        width: 92%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        .p {
+            padding: 0;
+            margin: 0 !important;
+        }
+    }
+    .awards,
+    .certifications {
+        flex-direction: row;
+    }
+`;
+
 export default TemplateTwo;

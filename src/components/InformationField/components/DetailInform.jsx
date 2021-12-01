@@ -56,7 +56,9 @@ const DetailInform = ({ info, setInfo }) => {
     );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    width: 25%;
+`;
 const Title = styled.div`
     font-size: 22px;
     font-weight: bold;
@@ -65,6 +67,9 @@ const WrapInfo = styled.div`
     padding: 1rem 0;
 
     input {
+        background-color: #697c958a;
+        color: white;
+        width: 100%;
         border-radius: 4px;
         border: 1px solid black;
         padding: 5px 4px;

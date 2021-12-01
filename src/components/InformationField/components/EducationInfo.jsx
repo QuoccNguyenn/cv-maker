@@ -42,7 +42,9 @@ const EducationInfo = ({ education, setEducation }) => {
     );
 };
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+    width: 25%;
+`;
 const Title = styled.div`
     font-size: 22px;
     font-weight: bold;
@@ -57,6 +59,8 @@ const WrapInfo = styled.div`
 
     input,
     textarea {
+        background-color: #697c958a;
+        color: white;
         border-radius: 4px;
         border: 1px solid black;
         padding: 5px 4px;

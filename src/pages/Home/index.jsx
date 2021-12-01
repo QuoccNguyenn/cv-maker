@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import InformationField from "../../components/InformationField";
-import TemplateOne from "../Templates/TemplateOne";
-import TemplateTwo from "../Templates/TemplateTwo";
+import SwitchTemplate from "../../components/TemplateSwitch";
+// import TemplateOne from "../Templates/TemplateOne";
+// import TemplateTwo from "../Templates/TemplateTwo";
 
 const Home = () => {
     const [info, setInfo] = useState({
@@ -14,8 +15,8 @@ const Home = () => {
         phone: "012123987129",
     });
     const [education, setEducation] = useState({
-        school: "Tran Hung Dao High School",
-        time: "2015-2018",
+        school: "Ton Duc Thang University",
+        time: "2018-2022",
         description:
             "Lorem ipsum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang",
     });
@@ -27,8 +28,9 @@ const Home = () => {
                 education={education}
                 setEducation={setEducation}
             />
-            <TemplateOne info={info} education={education} />
-            <TemplateTwo />
+            <SwitchTemplate info={info} education={education} />
+            {/* <TemplateOne info={info} education={education} />
+            <TemplateTwo /> */}
         </HomeWrapper>
     );
 };

@@ -19,11 +19,15 @@ const InformationField = ({ info, setInfo, education, setEducation }) => {
 };
 
 const Wrapper = styled.div`
-    padding: 1rem 0 3rem;
+    color: white;
+    height: fit-content !important;
+    padding: 1rem 1rem 3rem;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1.5rem;
+    background-image: linear-gradient(45deg, black, transparent);
+    background-color: transparent !important;
 `;
 
 export default InformationField;

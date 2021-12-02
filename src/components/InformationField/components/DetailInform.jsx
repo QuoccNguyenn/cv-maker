@@ -57,7 +57,7 @@ const DetailInform = ({ info, setInfo }) => {
 };
 
 const Wrapper = styled.div`
-    width: 25%;
+    width: 85%;
 `;
 const Title = styled.div`
     font-size: 22px;
@@ -67,6 +67,7 @@ const WrapInfo = styled.div`
     padding: 1rem 0;
 
     input {
+        width: 100%;
         background-color: #697c958a;
         color: white;
         width: 100%;
@@ -81,7 +82,7 @@ const Header = styled.div`
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
-    padding: 3px 0;
+    padding: 12px 0 4px;
 `;
 
 export default DetailInform;

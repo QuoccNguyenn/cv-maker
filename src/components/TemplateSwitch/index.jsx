@@ -24,23 +24,20 @@ const SwitchTemplate = ({ info, education }) => {
         switch (templateNum) {
             case 1:
                 return <TemplateOne info={info} education={education} />;
-                break;
             case 2:
                 return <TemplateTwo info={info} education={education} />;
-                break;
             case 3:
                 return <TemplateThree />;
-                break;
 
             default:
-                break;
+                return <TemplateOne info={info} education={education} />;
         }
     };
     return (
         <Wrapper className='container'>
             <SelectionList>
                 {templates.map((item, index) => (
-                    <span onClick={() => setTemplate(index + 1)}>
+                    <span onClick={() => setTemplate(index + 1)} key={index}>
                         {index + 1}
                     </span>
                 ))}
@@ -54,15 +51,21 @@ const SwitchTemplate = ({ info, education }) => {
 
 const Wrapper = styled.div``;
 const SelectionList = styled.div`
+    background-color: #595959;
+
+    padding: 1rem 2rem;
+
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 3px;
-    max-width: 250px;
     span {
+        color: white;
+        font-weight: 600;
         padding: 5px 10px;
         border-radius: 3px;
-        border: 1px solid gray;
+        border: 1px solid white;
+        cursor: pointer;
     }
 `;
 const WrapTemplate = styled.div``;

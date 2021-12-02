@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import TemplateOne from "../../pages/Templates/TemplateOne";
+import TemplateThree from "../../pages/Templates/TemplateThree";
 import TemplateTwo from "../../pages/Templates/TemplateTwo";
 
 const SwitchTemplate = ({ info, education }) => {
@@ -12,9 +13,9 @@ const SwitchTemplate = ({ info, education }) => {
         {
             template: "2",
         },
-        // {
-        //     template: "3",
-        // },
+        {
+            template: "3",
+        },
         // {
         //     template: "4",
         // },
@@ -26,6 +27,9 @@ const SwitchTemplate = ({ info, education }) => {
                 break;
             case 2:
                 return <TemplateTwo info={info} education={education} />;
+                break;
+            case 3:
+                return <TemplateThree />;
                 break;
 
             default:

@@ -77,6 +77,7 @@ const TemplateThree = () => {
 const WrapperTemplate = styled.div``;
 const WrapperContent = styled.div`
     width: 100%;
+    background-color: #e2f0ee;
 `;
 const Header = styled.div`
     height: 136px;

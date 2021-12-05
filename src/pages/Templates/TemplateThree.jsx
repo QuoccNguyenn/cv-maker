@@ -3,15 +3,29 @@ import styled from "styled-components";
 
 import InputAvatar from "../../components/InputAvatar";
 import FieldInfo from "../../components/FieldInfo";
+import { useInsert } from "../../constants/store";
 
 const TemplateThree = () => {
+    const [state, actions] = useInsert();
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
                 <Header>
                     <HeaderInfo>
-                        <InputName type='text' placeholder='Fullname' />
-                        <InputPosition type='text' placeholder='Position' />
+                        <InputName
+                            type='text'
+                            name='name'
+                            placeholder='Fullname'
+                            value={state.name}
+                            onChange={actions.insert}
+                        />
+                        <InputPosition
+                            type='text'
+                            name='position'
+                            placeholder='Position'
+                            value={state.position}
+                            onChange={actions.insert}
+                        />
                     </HeaderInfo>
 
                     <HeaderAvatar>
@@ -23,7 +37,7 @@ const TemplateThree = () => {
                     <LeftContent>
                         <FieldInfo
                             title='Contact Information'
-                            fields={["Phone", "Linkedin", "Email", "Twitter"]}
+                            fields={["phone", "facebook", "mail", "github"]}
                             types={["text", "text", "text", "text"]}
                         />
                         <FieldInfo
@@ -74,7 +88,9 @@ const TemplateThree = () => {
     );
 };
 
-const WrapperTemplate = styled.div``;
+const WrapperTemplate = styled.div`
+    height: auto !important;
+`;
 const WrapperContent = styled.div`
     width: 100%;
     background-color: #e2f0ee;
@@ -98,6 +114,7 @@ const HeaderAvatar = styled.div`
 const InputName = styled.input`
     font-size: 28px;
     font-weight: 550;
+    text-transform: uppercase;
     color: #fff;
     padding: 4px 16px;
     border-radius: 6px;

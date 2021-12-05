@@ -1,6 +1,6 @@
 {
     "homepage": "http://QuoccNguyenn.github.io/cv-maker/",
-    "name": "cv-app",
+    "name": "cv-maker",
     "version": "0.1.0",
     "private": true,
     "dependencies": {

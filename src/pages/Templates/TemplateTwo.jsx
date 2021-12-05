@@ -1,22 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import TextareaAutosize from "react-textarea-autosize";
+import { useInsert } from "../../constants/store";
 
-const TemplateTwo = ({ info, education }) => {
+const TemplateTwo = ({ info, setInfo, education }) => {
+    const [avatar2, setAvatar2] = useState();
+    const [state, actions] = useInsert();
+
+    useEffect(() => {
+        return () => {
+            avatar2 && URL.revokeObjectURL(avatar2.preview);
+        };
+    }, [avatar2, state.image]);
+
+    const handlePreviewAvatar2 = (e) => {
+        const file = e.target.files[0];
+
+        file.preview = URL.createObjectURL(file);
+
+        setAvatar2(file);
+        actions.setImage(file.preview);
+    };
+
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
                 <ContentLeft>
                     <WrapperAvatar>
                         <Name>
-                            {info.name} <p className='job'>{info.position}</p>
+                            <input
+                                className='name'
+                                name='name'
+                                type='text'
+                                value={state.name}
+                                placeholder='John Doe'
+                                onChange={actions.insert}
+                            />
+                            <input
+                                className='job'
+                                name='position'
+                                type='text'
+                                placeholder='Web Developer Intern'
+                                value={state.position}
+                                onChange={actions.insert}
+                            />
                         </Name>
                         <Image>
-                            <div>
-                                <img
-                                    src='../images/avatar/Untitled-2.png'
-                                    alt=''
-                                />
-                            </div>
+                            <input
+                                className='file'
+                                type='file'
+                                onChange={handlePreviewAvatar2}
+                            />
+                            <WrapperIMG>
+                                {state.image && (
+                                    <Img
+                                        className='avatar'
+                                        src={state.image}
+                                        alt=''
+                                    />
+                                )}
+                            </WrapperIMG>
                         </Image>
                     </WrapperAvatar>
                     {/* contact */}
@@ -25,34 +68,79 @@ const TemplateTwo = ({ info, education }) => {
                         <div className='wrap-inform'>
                             <ul>
                                 <li className='birthday'>
-                                    <i class='fas fa-calendar-week'></i>{" "}
-                                    17/3/2000
+                                    <i className='fas fa-calendar-week'></i>{" "}
+                                    <input
+                                        name='birthday'
+                                        className='birthday'
+                                        type='text'
+                                        placeholder={info.birthday}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
-                                <li className='sex'>
-                                    <i class='fas fa-male'></i> {info.gender}
+                                <li className='gender'>
+                                    <i className='fas fa-male'></i>
+                                    <input
+                                        className='gender'
+                                        name='gender'
+                                        type='text'
+                                        placeholder='Male/Female'
+                                        value={state.gender}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
                                 <li className='phone'>
-                                    <i class='fas fa-mobile-alt'></i>{" "}
-                                    {info.phone}
+                                    <i className='fas fa-mobile-alt'></i>{" "}
+                                    <input
+                                        className='phone'
+                                        type='text'
+                                        placeholder='0123456789'
+                                        value={state.phone}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
                                 <li className='mail'>
-                                    <i class='far fa-envelope'></i> {info.mail}
+                                    <i className='far fa-envelope'></i>
+                                    <input
+                                        className='mail'
+                                        type='text'
+                                        placeholder='johndoe@gmail.com'
+                                        value={state.mail}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
                                 <li className='address'>
-                                    <i class='fas fa-map-marked-alt'></i> 52/13
-                                    {info.phone}
+                                    <i className='fas fa-map-marked-alt'></i>
+                                    <TextareaAutosize
+                                        className='address'
+                                        name='address'
+                                        type='text'
+                                        placeholder='123 Wall Street'
+                                        value={state.address}
+                                        onChange={actions.insert}
+                                        rows='2'
+                                    />
                                 </li>
                                 <li className='facebook'>
-                                    <i class='fab fa-facebook-f'></i>{" "}
-                                    <a href='>https://fb.com'>
-                                        https://fb.com{" "}
-                                    </a>{" "}
+                                    <i className='fab fa-facebook-f'></i>{" "}
+                                    <input
+                                        className='facebook'
+                                        name='facebook'
+                                        type='text'
+                                        placeholder='facebook.com/johndoe'
+                                        value={state.facebook}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
                                 <li className='github'>
-                                    <i class='fab fa-github'></i>{" "}
-                                    <a href='https://github.com'>
-                                        https://github.com{" "}
-                                    </a>{" "}
+                                    <i className='fab fa-github'></i>{" "}
+                                    <input
+                                        className='github'
+                                        name='github'
+                                        type='text'
+                                        placeholder='github.com/johndoe'
+                                        value={state.github}
+                                        onChange={actions.insert}
+                                    />
                                 </li>
                             </ul>
                         </div>
@@ -78,7 +166,14 @@ const TemplateTwo = ({ info, education }) => {
                     {/* sở thích */}
                     <Interests>
                         <div className='box-highlight'>Interests</div>
-                        <p>I like soccer, music..</p>
+                        <TextareaAutosize
+                            className='Interests'
+                            type='text'
+                            name='interest'
+                            placeholder='I like soccer, music..'
+                            value={state.interest}
+                            onChange={actions.insert}
+                        />
                     </Interests>
                 </ContentLeft>
 
@@ -86,13 +181,13 @@ const TemplateTwo = ({ info, education }) => {
                     <Description>
                         <div className='box-highlight'>Objective</div>
                         <Content>
-                            <div className='description'>
-                                Take advantages of sales skills & experience and
-                                understanding of market to become a professional
-                                Sales Staff and bring a lot value to Customers.
-                                From that, I will contribute to development of
-                                TOPCV Company.
-                            </div>
+                            <TextareaAutosize
+                                className='Objective'
+                                type='text'
+                                placeholder={
+                                    "Take advantages of sales skills & experience and understanding of market to become a professional Sales Staff and bring a lot value to Customers. From that, I will contribute to development of TOPCV Company."
+                                }
+                            />
                         </Content>
                     </Description>
                     <hr />
@@ -100,16 +195,25 @@ const TemplateTwo = ({ info, education }) => {
                         <div className='box-highlight'>Education</div>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>{education.school}</div>
+                                <input
+                                    className='titles'
+                                    type='text'
+                                    placeholder={education.school}
+                                />
                                 <div className='time'>
-                                    <span className='time-range'>
-                                        {education.time}
-                                    </span>
+                                    <input
+                                        className='time-range'
+                                        type='text'
+                                        placeholder={education.time}
+                                    />
                                 </div>
                             </div>
-                            <div className='description'>
-                                {education.description}
-                            </div>
+                            <TextareaAutosize
+                                className='description'
+                                type='text'
+                                placeholder={education.description}
+                                // placeholder={"as"}
+                            />
                         </Content>
                     </Description>
                     <hr />
@@ -117,71 +221,68 @@ const TemplateTwo = ({ info, education }) => {
                         <div className='box-highlight'>Work experience</div>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>Sales Staff</div>
+                                <input
+                                    className='titles'
+                                    type='text'
+                                    placeholder={"Sales Staff"}
+                                />
                                 <div className='time'>
-                                    <span className='time-range'>
-                                        June 2014 - Present
-                                    </span>
+                                    <input
+                                        className='time-range'
+                                        type='text'
+                                        placeholder={" June 2014 - Present"}
+                                    />
                                 </div>
                             </div>
-                            <div className='description'>
-                                Main responsibilities: - Write and upload
-                                product advertising post via Facebook, Forum...
-                                - Introduce, consult products and answer
-                                customers' queries via phone and email. - Assist
-                                to control goods in and out - Attend Sales Skill
-                                Course in the Company
-                            </div>
+                            <TextareaAutosize
+                                className='description'
+                                type='text'
+                                placeholder={education.description}
+                            />
                         </Content>
                         <Content>
                             <div className='wrap-content'>
-                                <div className='titles'>Sales Staff</div>
+                                <input
+                                    className='titles'
+                                    type='text'
+                                    placeholder={"Sales Staff"}
+                                />
                                 <div className='time'>
-                                    <span className='time-range'>
-                                        June 2014 - Present
-                                    </span>
+                                    <input
+                                        className='time-range'
+                                        type='text'
+                                        placeholder={" June 2014 - Present"}
+                                    />
                                 </div>
                             </div>
-                            <div className='description'>
-                                Main responsibilities: - Write and upload
-                                product advertising post via Facebook, Forum...
-                                - Introduce, consult products and answer
-                                customers' queries via phone and email. - Assist
-                                to control goods in and out - Attend Sales Skill
-                                Course in the Company
-                            </div>
+                            <TextareaAutosize
+                                className='description'
+                                type='text'
+                                placeholder={education.description}
+                            />
                         </Content>
                     </Description>
                     <hr />
-                    <Description>
-                        <div className='box-highlight'>Activities</div>
-                        <Content>
-                            <div className='wrap-content'>
-                                <div className='titles'>
-                                    Member of US Ambassador
-                                </div>
-                                <div className='time'>
-                                    <span className='time-range'>
-                                        Jan 2014- Feb 2014
-                                    </span>
-                                </div>
-                            </div>
-                            <div className='description'>
-                                - Organize monthly events, network with US
-                                alumni <br />- Share how to hunt scholarships
-                                and US student's life experiences to all
-                                students who have received offers from US
-                                universities
-                            </div>
-                        </Content>
-                    </Description>
+
                     <hr />
                     <Description>
                         <div className='box-highlight'>Honors & Awards</div>
                         <Content>
                             <div className='description awards'>
-                                <strong>2013-2014 :</strong> Scholarship in 2nd
-                                semester 2012-2013 and 1st semester 2013-2014
+                                {/* <strong>2013-2014 :</strong> Scholarship in 2nd
+                                semester 2012-2013 and 1st semester 2013-2014 */}
+                                <strong>
+                                    <input
+                                        className='timeYear'
+                                        type='text'
+                                        placeholder={"2013 -2014"}
+                                    />
+                                </strong>
+                                <TextareaAutosize
+                                    className='descriptionStyle'
+                                    type='text'
+                                    placeholder={education.description}
+                                />
                             </div>
                         </Content>
                     </Description>
@@ -189,30 +290,65 @@ const TemplateTwo = ({ info, education }) => {
                     <Description>
                         <div className='box-highlight'>Certifications</div>
                         <Content>
-                            <div className='description certifications'>
-                                <strong>2014 :</strong> TOEIC Certificate with
-                                score 800 issued by TDT
+                            <div className='description awards'>
+                                {/* <strong>2013-2014 :</strong> Scholarship in 2nd
+                                semester 2012-2013 and 1st semester 2013-2014 */}
+                                <strong>
+                                    <input
+                                        className='timeYear'
+                                        type='text'
+                                        placeholder={"2013 -2014"}
+                                    />
+                                </strong>
+                                <TextareaAutosize
+                                    className='descriptionStyle'
+                                    type='text'
+                                    placeholder={
+                                        "TOEIC Certificate with score 800 issued by TDT"
+                                    }
+                                />
                             </div>
                         </Content>
                     </Description>
-                    <hr />
                 </ContentRight>
             </WrapperContent>
         </WrapperTemplate>
     );
 };
-const WrapperTemplate = styled.div``;
+
+const WrapperTemplate = styled.div`
+    height: auto !important;
+    input {
+        font-size: 1rem;
+        background: none;
+        border: none;
+    }
+    textarea {
+        font-size: 1rem;
+        background: none;
+        border: none;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        font-size: 1rem;
+        color: black;
+    }
+`;
 const WrapperContent = styled.div`
     font-family: "Roboto", sans-serif !important;
     padding: 20px;
     width: 100%;
-    min-height: 100vh;
+    height: auto;
+    /* min-height: 100vh; */
 
     background-color: white;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     box-shadow: 9px 9px 16px #0000001f, -9px -9px 16px #0000001f;
+    input {
+        width: 65%;
+    }
     .box-highlight {
         max-width: 100%;
         padding: 10px 1rem;
@@ -233,7 +369,7 @@ const WrapperContent = styled.div`
 //left
 const ContentLeft = styled.div`
     width: 35%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fffaf2;
 `;
 const WrapperAvatar = styled.div`
@@ -252,8 +388,20 @@ const Contact = styled.div`
         flex-direction: column;
 
         li {
-            display: block;
             margin: 2px 0;
+            display: flex;
+            gap: 5px;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+            justify-content: flex-start;
+            input {
+                width: auto;
+                font-size: 0.8em;
+            }
+            textarea {
+                width: 200px;
+            }
             i {
                 display: inline-block;
                 color: orange;
@@ -261,6 +409,8 @@ const Contact = styled.div`
                 height: 1rem;
             }
             a {
+                padding: 0px;
+                margin: 0px;
                 text-decoration: none;
                 color: black;
             }
@@ -298,73 +448,107 @@ const ProgressBar = styled.div`
     }
 `;
 const Interests = styled.div`
-    p {
-        padding-left: 1.5rem;
+    padding: 0 1.5rem;
+    .box-highlight {
+        padding: 0;
+    }
+    textarea {
+        /* margin-left: 1.5rem; */
+        padding: 0;
+        font-size: 16px;
+        width: 100%;
     }
 `;
 const Name = styled.div`
-    width: 100%;
-    min-width: 360px;
-    padding: 1rem 2rem 1rem 3rem;
-    color: orange;
-    font-size: 32px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: none;
+    .name {
+        width: 100%;
+        min-width: 300px;
+        padding: 1rem;
+        color: orange;
+        font-size: 32px !important;
+        font-weight: bold !important;
+        text-transform: uppercase;
+        background-color: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    p {
-        text-align: left;
-        font-size: 24px;
+    .job {
+        text-align: center;
+        font-size: 24px !important;
         font-weight: normal;
         text-transform: capitalize;
+        color: orange;
+    }
+    .job::placeholder,
+    .name::placeholder {
+        font-size: 24px !important;
+        color: orange;
     }
 `;
 const Image = styled.div`
     width: 160px;
     height: 160px;
-    background-color: white;
+    background-color: orange;
     border-radius: 50%;
-    border: 3px solid orange;
-
+    border: 6px solid black;
+    /* overflow: hidden; */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    div {
-        width: 95%;
-        height: 95%;
-        border-radius: 50%;
-        background-color: orange;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-            margin: 5px;
-            width: 65%;
-            max-width: 160px;
-        }
+    position: relative;
+    z-index: 2;
+    input {
+        position: absolute;
+        bottom: -35px;
+        left: 25px;
     }
 `;
-
+const WrapperIMG = styled.div`
+    border-radius: 50%;
+    overflow: hidden;
+`;
+const Img = styled.img`
+    width: 148px;
+    height: 148px;
+    z-index: 3;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+`;
 // right
 const ContentRight = styled.div`
     width: 64%;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fffaf2;
 `;
 
 const Description = styled.div`
-    width: 100%;
+    width: auto;
     margin: 20px 0px;
 `;
 
 const Content = styled.div`
     padding-left: 1.1rem;
     margin: 10px 0px;
+    .Objective {
+        width: 90%;
+        font-size: 1em;
+    }
+    strong {
+        width: 30%;
+        .timeYear {
+            font-weight: bold;
+            width: 100%;
+        }
+    }
+
+    .descriptionStyle {
+        width: 78%;
+    }
     .wrap-content {
         width: 98%;
         display: flex;
@@ -373,14 +557,25 @@ const Content = styled.div`
             font-weight: bold;
             font-size: 16px;
         }
+
         .time {
+            margin-top: 10px;
             font-style: italic;
             color: #a8a8a8;
+            .time-range,
+            .time-range::placeholder {
+                text-align: right;
+                font-style: italic;
+                color: #a8a8a8;
+                font-size: 1em;
+            }
         }
     }
     .description {
         padding: 5px;
+        margin: 5px;
         width: 92%;
+        height: auto;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;

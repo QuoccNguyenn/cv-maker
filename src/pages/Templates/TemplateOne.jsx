@@ -1,18 +1,65 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import TextareaAutosize from "react-textarea-autosize";
+import { useInsert } from "../../constants/store";
 
-const TemplateOne = ({ info, education }) => {
+const TemplateOne = ({ info, education, setInfo }) => {
+    const [avatar, setAvatar] = useState();
+    const [state, actions] = useInsert();
+
+    useEffect(() => {
+        return () => {
+            avatar && URL.revokeObjectURL(avatar.preview);
+        };
+    }, [avatar, state.image]);
+
+    const handlePreviewAvatar = (e) => {
+        const file = e.target.files[0];
+
+        file.preview = URL.createObjectURL(file);
+
+        setAvatar(file);
+        actions.setImage(file.preview);
+    };
+
     return (
         <WrapperTemplate className='container'>
             <WrapperContent>
                 <ContentLeft>
                     <WrapperAvatar>
                         <Image>
-                            <img src='../images/avatar/Untitled-2.png' alt='' />
+                            <input
+                                className='file'
+                                type='file'
+                                onChange={handlePreviewAvatar}
+                            />
+                            <WrapperIMG>
+                                {avatar && (
+                                    <Img
+                                        className='avatar'
+                                        src={state.image}
+                                        alt=''
+                                    />
+                                )}
+                            </WrapperIMG>
                         </Image>
                         <Name>
-                            {info.name}{" "}
-                            <span className='job'>{info.position}</span>
+                            <input
+                                name='name'
+                                className='name'
+                                type='text'
+                                placeholder='John Doe'
+                                value={state.name}
+                                onChange={actions.insert}
+                            />
+                            <input
+                                className='job'
+                                type='text'
+                                placeholder='Web Developer Intern'
+                                name='position'
+                                value={state.position}
+                                onChange={actions.insert}
+                            />
                         </Name>
                     </WrapperAvatar>
                     <Description>
@@ -23,63 +70,106 @@ const TemplateOne = ({ info, education }) => {
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        {education.time}
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        {education.school}
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
-                                    {/* <span className='position'>
-                                        Computer Science
-                                    </span> */}
-                                    <span className='detail'>
-                                        {education.description}
+                                    <span>
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            " langLorem ipsum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
                                     <span className='position'>
-                                        Computer Science
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            "Ba anot anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
+                                    <span>
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            "Lorum potro psum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                         </Content>
@@ -92,67 +182,106 @@ const TemplateOne = ({ info, education }) => {
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
+                                    <span>
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            " langLorem ipsum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
                                     <span className='position'>
-                                        Computer Science
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            "Ba anot anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                             <div className='wrap-content'>
                                 <div className='time'>
                                     <span className='time-range'>
-                                        2018-2022
+                                        <input
+                                            className='time'
+                                            type='text'
+                                            placeholder={education.time}
+                                        />
                                     </span>
-                                    <span className='place'>
-                                        Ton Duc Thang University
+                                    <span>
+                                        <input
+                                            className='place'
+                                            type='text'
+                                            placeholder={education.school}
+                                        />
                                     </span>
                                 </div>
                                 <div className='description'>
-                                    <span className='position'>
-                                        Computer Science
+                                    <span>
+                                        <input
+                                            className='position'
+                                            type='text'
+                                            placeholder={"Computer Science"}
+                                        />
                                     </span>
-                                    <span className='detail'>
-                                        Lorem ipsum potro anot lang Lorem ipsum
-                                        potro anot langLorem ipsum potro anot
-                                        lang Lorem ipsum potro anot langLorem
-                                        ipsum potro anot lang Lorem ipsum potro
-                                        anot lang
-                                    </span>
+
+                                    <TextareaAutosize
+                                        className='detail'
+                                        type='text'
+                                        placeholder={
+                                            "Lorum potro psum potro anot lang Lorem ipsum potro anot langLorem ipsum potro anot lang Lorem ipsum potro anot lang"
+                                        }
+                                    />
                                 </div>
                             </div>
                         </Content>
@@ -171,7 +300,14 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>ADDRESS</span>
-                                <span>{info.address}</span>
+                                <TextareaAutosize
+                                    name='address'
+                                    className='address'
+                                    type='text'
+                                    placeholder='123 Wall Street'
+                                    value={state.address}
+                                    onChange={actions.insert}
+                                />
                             </div>
                         </div>
                         <div className='wrap-inform'>
@@ -180,7 +316,14 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>WEB</span>
-                                <span>{info.mail}</span>
+                                <input
+                                    className='address'
+                                    name='address'
+                                    type='text'
+                                    placeholder='johndoe@gmail.com'
+                                    value={state.mail}
+                                    onChange={actions.insert}
+                                />
                             </div>
                         </div>
                         <div className='wrap-inform'>
@@ -189,20 +332,45 @@ const TemplateOne = ({ info, education }) => {
                             </div>
                             <div className='content'>
                                 <span className='title'>PHONE</span>
-                                <span>{info.phone}</span>
+                                <input
+                                    className='address'
+                                    type='text'
+                                    placeholder='0123456789'
+                                    value={state.phone}
+                                    onChange={actions.insert}
+                                />
                             </div>
                         </div>
                         <div className='box-highlight'>Skill</div>
                         <SkillProgress>
-                            <div className='skill'>HTML/CSS</div>
+                            <div className='skill'>
+                                {" "}
+                                <input
+                                    type='text'
+                                    placeholder='Skills'
+                                    // value=''
+                                />
+                            </div>
                             <ProgressBar>
                                 <div className='inner-progress'></div>
                             </ProgressBar>
-                            <div className='skill'>HTML/CSS</div>
+                            <div className='skill'>
+                                <input
+                                    type='text'
+                                    placeholder='Skills'
+                                    // value=''
+                                />
+                            </div>
                             <ProgressBar>
                                 <div className='inner-progress'></div>
                             </ProgressBar>
-                            <div className='skill'>HTML/CSS</div>
+                            <div className='skill'>
+                                <input
+                                    type='text'
+                                    placeholder='Skills'
+                                    // value=''
+                                />
+                            </div>
                             <ProgressBar>
                                 <div className='inner-progress'></div>
                             </ProgressBar>
@@ -222,7 +390,24 @@ const TemplateOne = ({ info, education }) => {
     );
 };
 
-const WrapperTemplate = styled.div``;
+const WrapperTemplate = styled.div`
+    height: auto !important;
+    input {
+        font-size: 1rem;
+        background: none;
+        border: none;
+    }
+    textarea {
+        font-size: 1rem;
+        background: none;
+        border: none;
+    }
+    input::placeholder,
+    textarea::placeholder {
+        font-size: 1rem;
+        color: black;
+    }
+`;
 const WrapperContent = styled.div`
     width: 100%;
     background-color: black;
@@ -262,24 +447,36 @@ const Image = styled.div`
     background-color: orange;
     border-radius: 50%;
     border: 6px solid black;
-
+    /* overflow: hidden; */
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-
     position: relative;
     z-index: 2;
-    img {
-        width: 65%;
-        max-width: 160px;
+    input {
+        position: absolute;
+        top: -30px;
+        left: 35px;
     }
+`;
+
+const Img = styled.img`
+    width: 148px;
+    height: 148px;
+    z-index: 3;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+`;
+const WrapperIMG = styled.div`
+    border-radius: 50%;
+    overflow: hidden;
 `;
 const Name = styled.div`
     width: 100%;
-    min-width: 360px;
+    min-width: 430px;
     padding: 1rem 2rem 1rem 3rem;
     color: white;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: bold;
     text-transform: uppercase;
     background-color: orange;
@@ -296,10 +493,35 @@ const Name = styled.div`
     justify-content: center;
     gap: 6px;
 
-    span {
-        font-size: 24px;
+    input {
+        width: 100%;
+    }
+
+    .name,
+    .name::placeholder {
+        width: 100%;
+        min-width: 300px;
+        padding: 0.5rem;
+        color: black;
+        font-size: 28px !important;
+        font-weight: bold !important;
+        text-transform: uppercase;
+        background-color: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .job,
+    .job::placeholder {
+        text-align: center;
+        font-size: 22px !important;
         font-weight: normal;
         text-transform: capitalize;
+        color: black;
     }
 `;
 const Description = styled.div`
@@ -343,9 +565,11 @@ const Content = styled.div`
             font-weight: 600;
         }
     }
-    .detail {
-        max-width: 100%;
+    .detail,
+    .detail::placeholder {
+        width: 100%;
         font-size: 13px;
+        line-height: 1;
     }
 `;
 
@@ -378,6 +602,12 @@ const Contact = styled.div`
         align-items: flex-start;
         justify-content: space-between;
         gap: 5px;
+        input,
+        input::placeholder,
+        textarea,
+        textarea::placeholder {
+            color: white;
+        }
     }
     .title {
         text-transform: uppercase;
@@ -387,11 +617,19 @@ const Contact = styled.div`
 const SkillProgress = styled.div`
     padding: 2rem 0 1.5rem;
     .skill {
+        padding: 10px 0;
+    }
+    input {
+        max-width: 100%;
+        color: white;
         text-transform: uppercase;
         font-weight: 600;
         font-size: 26px;
         text-align: center;
-        padding: 10px 0;
+    }
+    input::placeholder {
+        color: #ffffffaa;
+        font-size: 26px;
     }
 `;
 const ProgressBar = styled.div`

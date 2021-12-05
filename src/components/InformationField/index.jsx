@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 import DetailInform from "./components/DetailInform";
-import EducationInfo from "./components/EducationInfo";
+// import EducationInfo from "./components/EducationInfo";
 
 const InformationField = ({ info, setInfo, education, setEducation }) => {
     return (
         <Wrapper className='container'>
             <DetailInform info={info} setInfo={setInfo} />
             {/* Personal information */}
-            <EducationInfo education={education} setEducation={setEducation} />
+            {/* <EducationInfo education={education} setEducation={setEducation} /> */}
             {/* Education */}
             {/* Experiment
                 - skill
